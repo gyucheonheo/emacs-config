@@ -32,11 +32,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; swiper                                                                                         ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+(global-linum-mode ) ; Enable global line number mode
 (require 'powerline)
+(global-hl-line-mode 1) ; Enabled global highlight line mode 
+(set-face-background 'hl-line "#3e4446") ; Set the color to light gray color
 (powerline-default-theme)
 
-(ivy-mode 1)
+(ivy-mode 1) ; Enabled ivy mode 
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
 ;; enable this if you want `swiper' to use it
