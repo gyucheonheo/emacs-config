@@ -36,18 +36,30 @@
 (require 'powerline)
 (global-hl-line-mode 1) ; Enabled global highlight line mode 
 (set-face-background 'hl-line "#3e4446") ; Set the color to light gray color
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Powerline                                                                                      ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (powerline-default-theme)
+(set-face-attribute 'mode-line nil
+		    :foreground "White"
+                    :background "DarkOrange"
+                    :box nil)
 
 (ivy-mode 1) ; Enabled ivy mode 
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
 ;; enable this if you want `swiper' to use it
 ;; (setq search-default-mode #'char-fold-to-regexp)
-(global-set-key "\C-v" 'set-mark-command)
+(global-set-key "\C-l" 'set-mark-command)
 (global-set-key "\C-s" 'swiper)
+
+(global-set-key (kbd "C-c C-c") 'copy-region-as-kill)
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "<f1> f") 'counsel-describe-function)
 (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+(define-key global-map "\C-]" 'xref-find-definitions)
+(define-key global-map "\M-]" 'pop-tag-mark)
 (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
 (setq ivy-display-style 'fancy)
