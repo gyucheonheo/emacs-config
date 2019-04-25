@@ -63,3 +63,9 @@
 (define-key global-map "\M-]" 'pop-tag-mark)
 (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
 (setq ivy-display-style 'fancy)
+
+(add-hook 'python-mode-hook
+      (lambda ()
+        (setq indent-tabs-mode t)
+        (setq tab-width 4)
+        (setq python-indent-offset 4)))
