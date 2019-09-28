@@ -64,8 +64,6 @@
 (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
 (setq ivy-display-style 'fancy)
 
-(add-hook 'python-mode-hook
-      (lambda ()
-        (setq indent-tabs-mode t)
-        (setq tab-width 4)
-        (setq python-indent-offset 4)))
+(global-set-key (kbd "C-c C-f") 'fold-this-all)
+(global-set-key (kbd "C-c C-F") 'fold-this)
+(global-set-key (kbd "C-c M-f") 'fold-this-unfold-all)
